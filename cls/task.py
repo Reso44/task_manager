@@ -59,14 +59,15 @@ class Task:
         """
         The name of a task, which can be accessed simply as self.task
 
+
         Constraints
         -----------
 
-        1. Cannot exceed 15 characters:
-        >>> Task(name="A long task name")
+        1. Cannot exceed 25 characters:
+        >>> Task(name="A really really long task name...")
         Traceback (most recent call last):
             ...
-        Exception: The length of a task name cannot exceed 15 characters.
+        Exception: The length of a task name cannot exceed 25 characters.
 
         2. Cannot be empty:
         >>> Task(name="")
@@ -74,13 +75,19 @@ class Task:
             ...
         Exception: A task name cannot be empty.
 
+
+        Type assurance
+        --------------
+        >>> task = Task(name="Change the world")
+        >>> task.name == "Change the world"
+        True
         """
 
         return self._name
 
     @name.setter
     def name(self, value: str):
-        if len(value) > 15:
+        if len(value) > 25:
             raise Exception("The length of a task name cannot exceed 15 characters.")
         if not len(value):
             raise Exception("A task name cannot be empty.")
