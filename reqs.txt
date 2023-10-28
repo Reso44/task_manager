@@ -4,3 +4,4 @@ isort
 pytest
 mypy
 Pygments
+coverage
