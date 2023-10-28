@@ -14,7 +14,7 @@ permissions:
 
 jobs:
 
-  build:
+  - build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -30,7 +30,7 @@ jobs:
         run: |
           pytest --config-file=pytest.ini
 
-  deploy:
+  - deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
