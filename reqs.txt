@@ -1,0 +1,6 @@
+tox
+black
+isort
+pytest
+mypy
+Pygments
